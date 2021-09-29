@@ -6,9 +6,13 @@
 const body = document.body;
 const main = document.getElementById("main_scroll");
 const return_button = document.querySelector(".return_button");
+
+const main_pic = document.querySelector(".main_pic"); // Secondary Title - i Guessssss :)
 const main_picH1 = document.querySelector(".main_pic h1"); // Secondary Title - i Guessssss :)
 
 const title = document.querySelector("#title");
+const side_pic = document.querySelectorAll(".side_pic");
+const side_picCircle = document.querySelectorAll(".side_pic #circle");
 
 let sx = 0, // For scroll positions
   sy = 0;
@@ -76,6 +80,7 @@ function TitleAnimate() {
         Element.classList.add("pending");
       });
     }
+    clearInterval(TitleAnimateWait);
   }, 700);
 }
 
@@ -137,11 +142,24 @@ function render() {
   main.style.transform = `translate(-${dx}px, -${dy}px)`;
 
   if (
-    main_picH1.getBoundingClientRect().top +
-      main_picH1.getBoundingClientRect().height * 3 >
+    side_pic[0].getBoundingClientRect().top +
+      side_pic[0].getBoundingClientRect().height >
     0
   ) {
+    main_pic.style.backgroundPositionY = `${
+      -10 + (120 * dy) / side_pic[0].getBoundingClientRect().height
+    }%`;
     main_picH1.style.transform = `translateY(${dy / 7}px)`;
+
+    side_picCircle[0].style.marginBottom = `${dy / 6}px`;
+    side_picCircle[1].style.marginBottom = `${dy / 6}px`;
+
+    side_pic[0].style.backgroundPositionY = `${
+      -10 + (120 * dy) / side_pic[0].getBoundingClientRect().height
+    }%`;
+    side_pic[1].style.backgroundPositionY = `${
+      -10 + (120 * dy) / side_pic[0].getBoundingClientRect().height
+    }%`;
   }
 
   window.requestAnimationFrame(render);
