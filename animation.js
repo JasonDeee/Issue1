@@ -11,7 +11,10 @@ const main_pic = document.querySelector(".main_pic"); // Secondary Title - i Gue
 const main_picH1 = document.querySelector(".main_pic h1"); // Secondary Title - i Guessssss :)
 
 const title = document.querySelector("#title");
+
 const side_pic = document.querySelectorAll(".side_pic");
+const side_picH2 = document.querySelectorAll(".side_pic h2");
+
 const side_picCircle = document.querySelectorAll(".side_pic #circle");
 
 let sx = 0, // For scroll positions
@@ -160,6 +163,12 @@ function render() {
     side_pic[1].style.backgroundPositionY = `${
       -10 + (120 * dy) / side_pic[0].getBoundingClientRect().height
     }%`;
+    side_picH2[0].style.letterSpacing = `${
+      4 + (10 * dy) / side_pic[0].getBoundingClientRect().height
+    }px`;
+    side_picH2[1].style.letterSpacing = `${
+      4 + (10 * dy) / side_pic[0].getBoundingClientRect().height
+    }px`;
   }
 
   window.requestAnimationFrame(render);
