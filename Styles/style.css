@@ -29,6 +29,24 @@
   background: #151515;
 }
 
+span::-moz-selection,
+p::-moz-selection,
+h1::-moz-selection,
+h2::-moz-selection,
+h5::-moz-selection {
+  background: #c9c7c7;
+  color: #292929;
+}
+
+span::selection,
+p::selection,
+h1::selection,
+h2::selection,
+h5::selection {
+  background: #c9c7c7;
+  color: #292929;
+}
+
 html {
   max-width: 100vw;
   overflow-x: hidden;
@@ -160,6 +178,7 @@ body {
 
 #sec1::after {
   content: "";
+  pointer-events: none;
   width: 100%;
   height: 60%;
   background: -webkit-gradient(linear, left top, left bottom, from(#15151500), color-stop(97%, #151515));
@@ -200,7 +219,7 @@ body {
 }
 
 .top_header h1 {
-  margin-left: 8vw;
+  margin-left: 6vw;
 }
 
 .top_header h2 {
@@ -230,9 +249,10 @@ body {
 
 .header_pic .main_pic {
   background-image: url(../Images/header_pic.jpg);
-  background-position: 50% 0%;
+  background-position-x: center;
+  background-position-y: -10%;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100%;
   width: 77vw;
   height: 110%;
   text-align: center;
@@ -249,7 +269,9 @@ body {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  padding-top: 4vw;
+  padding-top: 5vw;
+  -webkit-transition: all 2s 0.8s cubic-bezier(0.25, 0, 0, 1), padding-top 0s linear, background-position-y 0s linear;
+  transition: all 2s 0.8s cubic-bezier(0.25, 0, 0, 1), padding-top 0s linear, background-position-y 0s linear;
 }
 
 .header_pic .main_pic h1 {
@@ -262,7 +284,7 @@ body {
   margin-left: 4vw;
   font-size: 7vw;
   font-weight: 900;
-  mix-blend-mode: overlay;
+  mix-blend-mode: soft-light;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -289,12 +311,25 @@ body {
   margin-right: -1.5vw;
 }
 
+.header_pic .main_pic h1::-moz-selection,
+.header_pic .main_pic span::-moz-selection {
+  background: #e9e7e7;
+  color: #15151580;
+}
+
+.header_pic .main_pic h1::selection,
+.header_pic .main_pic span::selection {
+  background: #e9e7e7;
+  color: #15151580;
+}
+
 .header_pic .side_pic {
   background-color: #494949;
   background-image: url(../Images/header_pic.jpg);
-  background-position: 0% 0%;
+  background-position-x: 0%;
+  background-position-y: 0%;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 690%;
   -webkit-box-flex: 1;
       -ms-flex: auto;
           flex: auto;
@@ -312,6 +347,8 @@ body {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  -webkit-transition: all 2s 0.8s cubic-bezier(0.25, 0, 0, 1), padding-top 0s linear, background-position-y 0s linear;
+  transition: all 2s 0.8s cubic-bezier(0.25, 0, 0, 1), padding-top 0s linear, background-position-y 0s linear;
 }
 
 .header_pic .side_pic #circle {
@@ -331,6 +368,8 @@ body {
   padding-top: 20vh;
   gap: 5vh;
   height: 60vh;
+  -webkit-transition: all 2s 0.8s cubic-bezier(0.25, 0, 0, 1), margin-bottom 0s linear;
+  transition: all 2s 0.8s cubic-bezier(0.25, 0, 0, 1), margin-bottom 0s linear;
 }
 
 .header_pic .side_pic #circle div {
@@ -348,6 +387,7 @@ body {
 .header_pic .side_pic h2 {
   color: white;
   font-size: 0.5rem;
+  letter-spacing: 1.5px;
   font-weight: 600;
   text-transform: uppercase;
   -webkit-transform: rotate(90deg);
@@ -355,7 +395,8 @@ body {
 }
 
 .header_pic #sp2 {
-  background-position: 100% 0%;
+  background-position-x: 100%;
+  background-position-y: 0%;
 }
 
 .header_contents {
