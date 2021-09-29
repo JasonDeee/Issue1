@@ -271,7 +271,7 @@ body {
     h2 {
       color: white;
       font-size: 0.5rem;
-      letter-spacing: 6px;
+      letter-spacing: 4px;
       font-weight: 600;
       text-transform: uppercase;
       display: block;
@@ -280,6 +280,9 @@ body {
 
       text-overflow: visible;
       white-space: nowrap;
+
+      transition: all 2s 0.8s cubic-bezier(0.25, 0, 0, 1),
+        letter-spacing 0s linear;
     }
   }
   #sp2 {
