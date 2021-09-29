@@ -248,6 +248,7 @@ body {
 }
 
 .header_pic .main_pic {
+  background-color: #151515;
   background-image: url(../Images/header_pic.jpg);
   background-position-x: center;
   background-position-y: -10%;
@@ -324,7 +325,7 @@ body {
 }
 
 .header_pic .side_pic {
-  background-color: #494949;
+  background-color: #151515;
   background-image: url(../Images/header_pic.jpg);
   background-position-x: 0%;
   background-position-y: 0%;
@@ -367,7 +368,7 @@ body {
           justify-content: flex-start;
   padding-top: 20vh;
   gap: 5vh;
-  height: 60vh;
+  height: 50vh;
   -webkit-transition: all 2s 0.8s cubic-bezier(0.25, 0, 0, 1), margin-bottom 0s linear;
   transition: all 2s 0.8s cubic-bezier(0.25, 0, 0, 1), margin-bottom 0s linear;
 }
@@ -387,11 +388,15 @@ body {
 .header_pic .side_pic h2 {
   color: white;
   font-size: 0.5rem;
-  letter-spacing: 1.5px;
+  letter-spacing: 6px;
   font-weight: 600;
   text-transform: uppercase;
+  display: block;
+  width: 1vw;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
+  text-overflow: visible;
+  white-space: nowrap;
 }
 
 .header_pic #sp2 {
