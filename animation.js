@@ -7,6 +7,7 @@ const body = document.body;
 const main = document.getElementById("main_scroll");
 const return_button = document.querySelector(".return_button");
 
+// Section 1
 const main_pic = document.querySelector(".main_pic"); // Secondary Title - i Guessssss :)
 const main_picH1 = document.querySelector(".main_pic h1"); // Secondary Title - i Guessssss :)
 
@@ -16,6 +17,18 @@ const side_pic = document.querySelectorAll(".side_pic");
 const side_picH2 = document.querySelectorAll(".side_pic h2");
 
 const side_picCircle = document.querySelectorAll(".side_pic #circle");
+
+// Section 2
+const sec2 = document.querySelector("#sec2");
+const main_block = document.querySelector("#sec2 .main_block");
+
+const BottomBlockL = document.querySelector("#sec2 .BottomBlock .leftBlock");
+const BottomBlockR = document.querySelector("#sec2 .BottomBlock .question");
+
+// Section 3
+
+const sec3 = document.querySelector("#sec3");
+const sec3LeftSide = document.querySelector("#sec3 #left_col");
 
 let sx = 0, // For scroll positions
   sy = 0;
@@ -40,7 +53,7 @@ function ResetPage() {
   main.style = ``;
 }
 
-// Title OnAnimate Out
+// Title OnAnimate Out - Section 1
 const titleArray = title.innerText.split("");
 title.innerHTML = ``;
 
@@ -101,6 +114,30 @@ window.addEventListener("resize", (e) => {
   }, 1200);
 });
 
+//// SceneTitle Animate In - Sec 2
+
+function SceneAnimate() {
+  var Sec2Time = setTimeout(() => {
+    // Trigger On 75% Windows Height
+    if (
+      main_block.getBoundingClientRect().top - window.innerHeight * 0.65 <
+      0
+    ) {
+      main_block.style.transform = `skewY(-15deg)`;
+
+      BottomBlockL.style.transform = `none`;
+      BottomBlockR.style.transform = `none`;
+    } else {
+      main_block.style = ``;
+
+      BottomBlockL.style = ``;
+      BottomBlockR.style = ``;
+    }
+
+    clearTimeout(Sec2Time);
+  }, 700);
+}
+
 //
 // Momentum Scrolling
 
@@ -108,7 +145,10 @@ window.addEventListener("resize", (e) => {
 window.addEventListener("scroll", (e) => {
   easeScroll(); // Momentium
   ReturnButton(); // Return Button OnPopUp
-  TitleAnimate(); // Title Animate In
+
+  TitleAnimate(); // Title Animate In - Sec 1
+
+  SceneAnimate(); // SceneTitle Animate In - Sec 2
 });
 
 var lastScrollTop = 0;
@@ -179,6 +219,39 @@ function render() {
     side_picH2[1].style.letterSpacing = `${
       4 + (10 * dy) / side_pic[0].getBoundingClientRect().height
     }px`;
+  }
+
+  if (
+    sec3.getBoundingClientRect().top - window.innerHeight <= 0 &&
+    sec3.getBoundingClientRect().top >= 0
+  ) {
+    sec2.style.transform = `translateY(${
+      -sec3.getBoundingClientRect().top + window.innerHeight
+    }px)`;
+  } else if (sec3.getBoundingClientRect().top - window.innerHeight > 0) {
+    sec2.style = ``;
+  }
+
+  if (
+    sec3.getBoundingClientRect().top <= 0 &&
+    sec3.getBoundingClientRect().top +
+      sec3.getBoundingClientRect().height -
+      window.innerHeight >
+      0
+  ) {
+    sec3LeftSide.style.transform = `translateY(${-sec3.getBoundingClientRect()
+      .top}px)`;
+  } else if (sec3.getBoundingClientRect().top > 0) {
+    sec3LeftSide.style = ``;
+  } else if (
+    sec3.getBoundingClientRect().top +
+      sec3.getBoundingClientRect().height -
+      window.innerHeight <
+    0
+  ) {
+    sec3LeftSide.style.transform = `translateY(${
+      sec3.getBoundingClientRect().height - window.innerHeight
+    }px)`;
   }
 
   window.requestAnimationFrame(render);
