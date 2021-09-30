@@ -61,29 +61,33 @@ const TitleSpan = document.querySelectorAll("#title span");
 const Titleline = document.querySelector(".header_contents .line");
 
 function TitleAnimate() {
-  var TitleAnimateWait = setInterval(() => {
+  var TitleAnimateWait = setTimeout(() => {
     if (
       title.getBoundingClientRect().top +
         title.getBoundingClientRect().height * 1.2 -
         window.innerHeight <
       0
     ) {
+      Titleline.style = ``;
       Titleline.style.width = `90px`;
       TitleSpan.forEach((Element) => {
         Element.classList.remove("pending");
+        // Element.style -= `transition:none`;
       });
     } else if (
-      title.getBoundingClientRect().top +
-        title.getBoundingClientRect().height * 1.2 -
+      title.getBoundingClientRect().top -
+        title.getBoundingClientRect().height * 0.05 -
         window.innerHeight >
       0
     ) {
+      Titleline.style.transition = `none`;
       Titleline.style.width = `0`;
       TitleSpan.forEach((Element) => {
         Element.classList.add("pending");
+        // Element.style += `transition:none`;
       });
     }
-    clearInterval(TitleAnimateWait);
+    clearTimeout(TitleAnimateWait);
   }, 700);
 }
 
@@ -142,18 +146,24 @@ function render() {
   dx = Math.floor(dx * 100) / 100;
   dy = Math.floor(dy * 100) / 100;
 
-  main.style.transform = `translate(-${dx}px, -${dy}px)`;
+  main.style.transform = `translate(-${dx}px, -${dy}px)`; // Main Momentium Scroll
+  //
 
+  //
+  // // // Header Scroll Events
   if (
     side_pic[0].getBoundingClientRect().top +
       side_pic[0].getBoundingClientRect().height >
     0
   ) {
+    // Main/Center Picture
     main_pic.style.backgroundPositionY = `${
-      -10 + (120 * dy) / side_pic[0].getBoundingClientRect().height
+      -10 + (150 * dy) / side_pic[0].getBoundingClientRect().height
     }%`;
-    main_picH1.style.transform = `translateY(${dy / 7}px)`;
+    main_picH1.style.transform = `translateY(${dy / 150}px)`;
 
+    //
+    // Side Picture
     side_picCircle[0].style.marginBottom = `${dy / 6}px`;
     side_picCircle[1].style.marginBottom = `${dy / 6}px`;
 
