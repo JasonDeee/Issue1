@@ -460,9 +460,9 @@ body {
 }
 
 .header_contents p {
-  margin-top: 2vh;
-  font-size: 1.1rem;
-  line-height: 1.75rem;
+  font-weight: 400;
+  font-size: 1.1vw;
+  line-height: 1.65vw;
 }
 
 .header_contents .line {
@@ -492,7 +492,10 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  gap: 0.3vw;
+  -webkit-transition: all 1s cubic-bezier(0.25, 0, 0, 1), -webkit-transform 0s linear;
+  transition: all 1s cubic-bezier(0.25, 0, 0, 1), -webkit-transform 0s linear;
+  transition: all 1s cubic-bezier(0.25, 0, 0, 1), transform 0s linear;
+  transition: all 1s cubic-bezier(0.25, 0, 0, 1), transform 0s linear, -webkit-transform 0s linear;
   padding-top: 2vh;
 }
 
@@ -527,7 +530,8 @@ body {
 
 #sec2 #right {
   width: 62%;
-  padding: 5vw;
+  padding-left: 5vw;
+  padding-right: 8vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -541,20 +545,15 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  text-align: justify;
+  text-align: left;
 }
 
 #sec2 #right p {
-  margin-bottom: 0.4rem;
+  margin-bottom: 1vw;
+  font-weight: 400;
   color: #e9e7e7;
-  font-size: 1.1rem;
-  line-height: 2rem;
-}
-
-#sec2 #right #stable {
-  font-size: 1vw;
-  margin-bottom: 0.4rem;
-  line-height: 1.5vw;
+  font-size: 1.1vw;
+  line-height: 1.65vw;
 }
 
 .main_block {
@@ -574,8 +573,10 @@ body {
   color: #e9e7e7;
   text-transform: uppercase;
   position: relative;
-  -webkit-transform: skewY(-10deg);
-          transform: skewY(-10deg);
+  -webkit-transform: skewY(0);
+          transform: skewY(0);
+  -webkit-transition: all 1.3s cubic-bezier(0.25, 0, 0, 1);
+  transition: all 1.3s cubic-bezier(0.25, 0, 0, 1);
 }
 
 .main_block .block_line {
@@ -693,6 +694,7 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 
 .main_block .leftBlock {
@@ -710,6 +712,10 @@ body {
       -ms-flex-align: start;
           align-items: flex-start;
   position: relative;
+  -webkit-transition: all 1.3s cubic-bezier(0.25, 0, 0, 1);
+  transition: all 1.3s cubic-bezier(0.25, 0, 0, 1);
+  -webkit-transform: translateX(-30vw);
+          transform: translateX(-30vw);
 }
 
 .main_block .question {
@@ -718,6 +724,10 @@ body {
   height: 5.7vw;
   margin-bottom: 1vw;
   text-align: center;
+  -webkit-transform: translateX(15vw);
+          transform: translateX(15vw);
+  -webkit-transition: all 1.3s cubic-bezier(0.25, 0, 0, 1);
+  transition: all 1.3s cubic-bezier(0.25, 0, 0, 1);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -738,5 +748,80 @@ body {
   background: #e9e7e7;
   -webkit-box-shadow: 0 -2vw 3vw #000000bd;
           box-shadow: 0 -2vw 3vw #000000bd;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+#sec3 .col {
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+#sec3 #left_col {
+  width: 38%;
+  height: 100vh;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  background: #db7fd3;
+  -webkit-transition: all 1s cubic-bezier(0.25, 0, 0, 1), -webkit-transform 0s linear;
+  transition: all 1s cubic-bezier(0.25, 0, 0, 1), -webkit-transform 0s linear;
+  transition: all 1s cubic-bezier(0.25, 0, 0, 1), transform 0s linear;
+  transition: all 1s cubic-bezier(0.25, 0, 0, 1), transform 0s linear, -webkit-transform 0s linear;
+}
+
+#sec3 #left_col h1 {
+  color: #292929;
+  font-weight: 900;
+  text-align: center;
+  font-weight: 900;
+  font-size: 2.2vw;
+  width: 25vw;
+}
+
+#sec3 #right_col {
+  width: 62%;
+  padding-left: 5vw;
+  padding-right: 8vw;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+}
+
+#sec3 #right_col p {
+  color: #151515;
+  font-weight: 400;
+  font-size: 1.1vw;
+  line-height: 1.65vw;
+}
+
+#sec3 #right_col br {
+  content: "";
+  display: block;
+  margin: 1vw 0;
+}
+
+#sec3 #right_col h3 {
+  width: 100%;
+  margin-top: 3vw;
 }
 /*# sourceMappingURL=style.css.map */
