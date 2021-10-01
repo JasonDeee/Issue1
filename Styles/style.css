@@ -4,13 +4,13 @@
           box-sizing: border-box;
   padding: 0;
   margin: 0;
-  -webkit-transition: all 0.8s cubic-bezier(0.25, 0, 0, 1), width 0s linear, height 0s linear;
-  transition: all 0.8s cubic-bezier(0.25, 0, 0, 1), width 0s linear, height 0s linear;
+  -webkit-transition: none;
+  transition: none;
   font-family: "Montserrat", sans-serif;
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 2px;
   -webkit-transition: width 0.5s ease-out;
   transition: width 0.5s ease-out;
   -webkit-transform: translateX(5px);
@@ -46,6 +46,12 @@ html {
 
 body {
   overflow: overlay;
+  background: #e9e7e7;
+}
+
+p {
+  -webkit-transition: none;
+  transition: none;
 }
 
 .return_button {
@@ -70,8 +76,8 @@ body {
           justify-content: center;
   cursor: pointer;
   overflow: hidden;
-  -webkit-transition: all 0.8s cubic-bezier(0.25, 0, 0, 1), background 0.8s 0.22s cubic-bezier(0.25, 0, 0, 1);
-  transition: all 0.8s cubic-bezier(0.25, 0, 0, 1), background 0.8s 0.22s cubic-bezier(0.25, 0, 0, 1);
+  -webkit-transition: all 0.8s cubic-bezier(0.25, 0, 0, 1), background 0.8s 0.33s cubic-bezier(0.25, 0, 0, 1);
+  transition: all 0.8s cubic-bezier(0.25, 0, 0, 1), background 0.8s 0.33s cubic-bezier(0.25, 0, 0, 1);
 }
 
 .return_svg {
@@ -89,6 +95,8 @@ body {
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 4vw;
+  -webkit-transition: stroke 0.8s 0.22s cubic-bezier(0.25, 0, 0, 1);
+  transition: stroke 0.8s 0.22s cubic-bezier(0.25, 0, 0, 1);
 }
 
 .return_overlay {
@@ -101,6 +109,8 @@ body {
   width: 105%;
   height: 105%;
   z-index: 2;
+  -webkit-transition: all 0.8s cubic-bezier(0.25, 0, 0, 1);
+  transition: all 0.8s cubic-bezier(0.25, 0, 0, 1);
 }
 
 .return_button:hover .return_overlay {
@@ -289,9 +299,9 @@ body {
 .header_pic .main_pic h1 {
   -webkit-animation: secondTitle 2s cubic-bezier(0.25, 0, 0, 1) 0.2s forwards;
           animation: secondTitle 2s cubic-bezier(0.25, 0, 0, 1) 0.2s forwards;
-  overflow: hidden;
   -webkit-transition: all 0s linear;
   transition: all 0s linear;
+  overflow-y: hidden;
   color: white;
   position: relative;
   overflow: visible;
@@ -316,11 +326,12 @@ body {
 
 .header_pic .main_pic span {
   font-size: 1vw;
+  font-weight: 600;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
   display: inline-block;
   text-align: start;
-  overflow: visible;
+  overflow-y: hidden;
   margin-left: -1.5vw;
   margin-right: -1.5vw;
 }
@@ -492,10 +503,6 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-transition: all 1s cubic-bezier(0.25, 0, 0, 1), -webkit-transform 0s linear;
-  transition: all 1s cubic-bezier(0.25, 0, 0, 1), -webkit-transform 0s linear;
-  transition: all 1s cubic-bezier(0.25, 0, 0, 1), transform 0s linear;
-  transition: all 1s cubic-bezier(0.25, 0, 0, 1), transform 0s linear, -webkit-transform 0s linear;
   padding-top: 2vh;
 }
 
@@ -545,7 +552,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  text-align: left;
+  text-align: justify;
 }
 
 #sec2 #right p {
@@ -712,8 +719,8 @@ body {
       -ms-flex-align: start;
           align-items: flex-start;
   position: relative;
-  -webkit-transition: all 1.3s cubic-bezier(0.25, 0, 0, 1);
-  transition: all 1.3s cubic-bezier(0.25, 0, 0, 1);
+  -webkit-transition: all 1.8s cubic-bezier(0.25, 0, 0, 1);
+  transition: all 1.8s cubic-bezier(0.25, 0, 0, 1);
   -webkit-transform: translateX(-30vw);
           transform: translateX(-30vw);
 }
@@ -726,8 +733,8 @@ body {
   text-align: center;
   -webkit-transform: translateX(15vw);
           transform: translateX(15vw);
-  -webkit-transition: all 1.3s cubic-bezier(0.25, 0, 0, 1);
-  transition: all 1.3s cubic-bezier(0.25, 0, 0, 1);
+  -webkit-transition: all 1.8s cubic-bezier(0.25, 0, 0, 1);
+  transition: all 1.8s cubic-bezier(0.25, 0, 0, 1);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -746,8 +753,8 @@ body {
 
 #sec3 {
   background: #e9e7e7;
-  -webkit-box-shadow: 0 -2vw 3vw #000000bd;
-          box-shadow: 0 -2vw 3vw #000000bd;
+  -webkit-box-shadow: 0 -3vw 2.7vw #000000bd;
+          box-shadow: 0 -3vw 2.7vw #000000bd;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -812,6 +819,7 @@ body {
   font-weight: 400;
   font-size: 1.1vw;
   line-height: 1.65vw;
+  text-align: justify;
 }
 
 #sec3 #right_col br {
@@ -823,5 +831,9 @@ body {
 #sec3 #right_col h3 {
   width: 100%;
   margin-top: 3vw;
+}
+
+#sec4 {
+  background: #e9e7e7;
 }
 /*# sourceMappingURL=style.css.map */
