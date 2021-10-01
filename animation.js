@@ -225,8 +225,9 @@ function render() {
     sec3.getBoundingClientRect().top - window.innerHeight <= 0 &&
     sec3.getBoundingClientRect().top >= 0
   ) {
+    sec2.style.transition = `none`;
     sec2.style.transform = `translateY(${
-      -sec3.getBoundingClientRect().top + window.innerHeight
+      (-sec3.getBoundingClientRect().top + window.innerHeight) / 2
     }px)`;
   } else if (sec3.getBoundingClientRect().top - window.innerHeight > 0) {
     sec2.style = ``;
@@ -239,6 +240,7 @@ function render() {
       window.innerHeight >
       0
   ) {
+    sec3LeftSide.style.transition = `none`;
     sec3LeftSide.style.transform = `translateY(${-sec3.getBoundingClientRect()
       .top}px)`;
   } else if (sec3.getBoundingClientRect().top > 0) {
