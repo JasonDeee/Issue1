@@ -69,7 +69,14 @@
       </section>
       <section class="section" id="sec2">
         <div class="row" id="left">
+          <video
+            src="./Videos/pexels-cottonbro-7012393.mp4"
+            type="video/mp4"
+            loop
+          ></video>
+
           <div class="main_block">
+            <div class="Black_matte"></div>
             <div class="block_line"></div>
             <div class="block_line" id="line2"></div>
             <div class="SceneBox">
@@ -225,6 +232,40 @@
       <section class="section" id="sec5"></section>
       <section class="section" id="sec6"></section>
     </main>
+    <svg x="0" y="0" width="100%" height="100%" style="display: none">
+      <filter id="turbulence">
+        <feTurbulence
+          id="Morph-filter"
+          type="turbulence"
+          numOctaves="15"
+          seed="1"
+          baseFrequency="0.002 0.005"
+        ></feTurbulence>
+        <feDisplacementMap
+          scale="198"
+          in="SourceGraphic"
+          in2="turbulence"
+        ></feDisplacementMap>
+        <animate
+          xlink:href="#Morph-filter"
+          attributeName="baseFrequency"
+          dur="65s"
+          keyTimes="0;0.5;1"
+          values="0.0015 0.0035;0.0025 0.0045;0.0015 0.0035"
+          repeatCount="indefinite"
+        />
+      </filter>
+      <filter id="LumaMask">
+        <feColorMatrix
+          type="matrix"
+          values="
+                1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                2.56 2.56 2.56 0 0"
+        />
+      </filter>
+    </svg>
   </body>
   <script src="./animation.js"></script>
 </html>

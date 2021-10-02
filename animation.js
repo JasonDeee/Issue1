@@ -24,6 +24,7 @@ const main_block = document.querySelector("#sec2 .main_block");
 
 const BottomBlockL = document.querySelector("#sec2 .BottomBlock .leftBlock");
 const BottomBlockR = document.querySelector("#sec2 .BottomBlock .question");
+const sec2Video = document.querySelector("#sec2 video");
 
 // Section 3
 
@@ -127,11 +128,15 @@ function SceneAnimate() {
 
       BottomBlockL.style.transform = `none`;
       BottomBlockR.style.transform = `none`;
+
+      sec2Video.play();
     } else {
       main_block.style = ``;
 
       BottomBlockL.style = ``;
       BottomBlockR.style = ``;
+
+      sec2Video.pause();
     }
 
     clearTimeout(Sec2Time);
@@ -221,6 +226,7 @@ function render() {
     }px`;
   }
 
+  //sec 2
   if (
     sec3.getBoundingClientRect().top - window.innerHeight <= 0 &&
     sec3.getBoundingClientRect().top >= 0
@@ -233,6 +239,7 @@ function render() {
     sec2.style = ``;
   }
 
+  // sec 3
   if (
     sec3.getBoundingClientRect().top <= 0 &&
     sec3.getBoundingClientRect().top +
