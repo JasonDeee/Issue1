@@ -369,9 +369,10 @@ p {
   justify-content: space-between;
 
   padding-top: 2vh;
+  overflow: hidden;
 
   .line {
-    width: 1px;
+    width: 3px;
     background: #e9e7e7;
     min-height: 100vh;
     height: 100%;
@@ -388,6 +389,7 @@ p {
     justify-content: center;
     width: 38%;
     padding-right: 5vw;
+    filter: url("#LumaMask");
   }
   #right {
     width: 62%;
@@ -408,13 +410,21 @@ p {
       line-height: 1.65vw;
     }
   }
+  video {
+    width: 25vw;
+    height: auto;
+    position: absolute;
+    top: 5vh;
+  }
 }
 .main_block {
+  mix-blend-mode: multiply;
+
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
-  color: #e9e7e7;
+  color: white;
   text-transform: uppercase;
 
   position: relative;
@@ -423,10 +433,19 @@ p {
 
   transition: all 1.3s cubic-bezier(0.25, 0, 0, 1);
 
+  .Black_matte {
+    background: black;
+    position: absolute;
+    width: 102%;
+    height: 150vh;
+    z-index: -1;
+    transform: translateX(1%);
+  }
+
   .block_line {
-    height: 1px;
+    height: 3px;
     width: 7vw;
-    background: #e9e7e7;
+    background: white;
     margin-bottom: 1vw;
     margin-right: 3vw;
   }
@@ -442,7 +461,7 @@ p {
   }
 
   .SceneBox {
-    background: #e9e7e7;
+    background: white;
     width: 25vw;
     height: 10vw;
 
@@ -458,7 +477,7 @@ p {
     position: absolute;
     text-align: start;
 
-    color: #151515;
+    color: black;
     font-weight: 900;
     font-size: 4vw;
     line-height: 3.3vw;
@@ -466,7 +485,7 @@ p {
 
   #h502 {
     color: transparent;
-    -webkit-text-stroke: 1pt #151515;
+    -webkit-text-stroke: 1pt black;
 
     transform: translateX(2px) translateY(2px);
     pointer-events: none;
@@ -486,10 +505,10 @@ p {
     align-items: flex-end;
     justify-content: center;
     div {
-      height: 1px;
+      height: 3px;
       width: auto;
       flex: auto;
-      background: #e9e7e7;
+      background: white;
     }
   }
   h3 {
@@ -522,7 +541,7 @@ p {
     transform: translateX(-30vw);
   }
   .question {
-    background: #e9e7e7;
+    background: white;
     width: 4vw;
     height: 5.7vw;
     margin-bottom: 1vw;

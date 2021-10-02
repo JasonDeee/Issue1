@@ -504,10 +504,11 @@ p {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding-top: 2vh;
+  overflow: hidden;
 }
 
 #sec2 .line {
-  width: 1px;
+  width: 3px;
   background: #e9e7e7;
   min-height: 100vh;
   height: 100%;
@@ -533,6 +534,8 @@ p {
           justify-content: center;
   width: 38%;
   padding-right: 5vw;
+  -webkit-filter: url("#LumaMask");
+          filter: url("#LumaMask");
 }
 
 #sec2 #right {
@@ -563,7 +566,15 @@ p {
   line-height: 1.65vw;
 }
 
+#sec2 video {
+  width: 25vw;
+  height: auto;
+  position: absolute;
+  top: 5vh;
+}
+
 .main_block {
+  mix-blend-mode: multiply;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -577,7 +588,7 @@ p {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  color: #e9e7e7;
+  color: white;
   text-transform: uppercase;
   position: relative;
   -webkit-transform: skewY(0);
@@ -586,10 +597,20 @@ p {
   transition: all 1.3s cubic-bezier(0.25, 0, 0, 1);
 }
 
+.main_block .Black_matte {
+  background: black;
+  position: absolute;
+  width: 102%;
+  height: 150vh;
+  z-index: -1;
+  -webkit-transform: translateX(1%);
+          transform: translateX(1%);
+}
+
 .main_block .block_line {
-  height: 1px;
+  height: 3px;
   width: 7vw;
-  background: #e9e7e7;
+  background: white;
   margin-bottom: 1vw;
   margin-right: 3vw;
 }
@@ -607,7 +628,7 @@ p {
 }
 
 .main_block .SceneBox {
-  background: #e9e7e7;
+  background: white;
   width: 25vw;
   height: 10vw;
   text-align: start;
@@ -630,7 +651,7 @@ p {
 .main_block h5 {
   position: absolute;
   text-align: start;
-  color: #151515;
+  color: black;
   font-weight: 900;
   font-size: 4vw;
   line-height: 3.3vw;
@@ -638,7 +659,7 @@ p {
 
 .main_block #h502 {
   color: transparent;
-  -webkit-text-stroke: 1pt #151515;
+  -webkit-text-stroke: 1pt black;
   -webkit-transform: translateX(2px) translateY(2px);
           transform: translateX(2px) translateY(2px);
   pointer-events: none;
@@ -669,12 +690,12 @@ p {
 }
 
 .main_block #center div {
-  height: 1px;
+  height: 3px;
   width: auto;
   -webkit-box-flex: 1;
       -ms-flex: auto;
           flex: auto;
-  background: #e9e7e7;
+  background: white;
 }
 
 .main_block h3 {
@@ -726,7 +747,7 @@ p {
 }
 
 .main_block .question {
-  background: #e9e7e7;
+  background: white;
   width: 4vw;
   height: 5.7vw;
   margin-bottom: 1vw;
