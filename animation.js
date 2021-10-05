@@ -35,7 +35,7 @@ let sx = 0, // For scroll positions
   sy = 0;
 let dx = sx, // For container positions And Force (Percentage 70% Recommended)
   dy = sy,
-  Force = 70;
+  Force = 80;
 
 // Onpage Load And Refresh Events
 
@@ -177,21 +177,26 @@ function ReturnButton() {
 }
 
 function easeScroll() {
-  sx = window.pageXOffset;
+  // sx = window.pageXOffset;
   sy = window.pageYOffset;
+  console.log(sy);
 }
 
 window.requestAnimationFrame(render);
 
 function render() {
   //We calculate our container position by linear interpolation method
-  dx = li(dx, sx, Force / 1000);
+  // dx = li(dx, sx, Force / 1000);
   dy = li(dy, sy, Force / 1000);
 
-  dx = Math.floor(dx * 100) / 100;
-  dy = Math.floor(dy * 100) / 100;
+  // dx = Math.floor(dx * 100) / 100;
+  dy = Math.round(dy * 100) / 100;
 
-  main.style.transform = `translate(-${dx}px, -${dy}px)`; // Main Momentium Scroll
+  // if (Math.abs(sy - dy) < 0.1) {
+  //   dy = sy;
+  // }
+
+  main.style.transform = `translateY(-${dy}px)`; // Main Momentium Scroll
   //
 
   //
