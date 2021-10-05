@@ -508,7 +508,7 @@ p {
 }
 
 #sec2 .line {
-  width: 3px;
+  width: 1px;
   background: #e9e7e7;
   min-height: 100vh;
   height: 100%;
@@ -837,7 +837,7 @@ p {
 
 #sec3 #right_col p {
   color: #151515;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1.1vw;
   line-height: 1.65vw;
   text-align: justify;
@@ -852,6 +852,163 @@ p {
 #sec3 #right_col h3 {
   width: 100%;
   margin-top: 3vw;
+}
+
+#sec3 #right_col #KTS {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  position: relative;
+  gap: 2vw;
+  margin-bottom: 1vw;
+}
+
+#sec3 #right_col #KTS .img::after {
+  content: "";
+  height: 2px;
+  width: 5vw;
+  position: absolute;
+  top: 1vw;
+  left: -1.3vw;
+  background: white;
+}
+
+#sec3 #right_col #KTS .img {
+  background-position: 45% 30%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 50%;
+  aspect-ratio: 1;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding-top: 5vw;
+}
+
+#sec3 #right_col #KTS .img h2 {
+  text-transform: uppercase;
+  font-weight: 900;
+  color: white;
+  -webkit-transform: translateX(62%);
+          transform: translateX(62%);
+  mix-blend-mode: difference;
+}
+
+#sec3 #right_col #KTS .img h2 span {
+  font-size: 0.7vw;
+  font-weight: 600;
+  font-style: italic;
+  display: inline-block;
+  margin-left: 0.5vw;
+}
+
+#sec3 #right_col #KTS .img h2 br {
+  margin: 0.3vw 0;
+}
+
+#sec3 #right_col #KTS .img h2::after {
+  content: "";
+  height: 2px;
+  width: 3vw;
+  position: absolute;
+  bottom: -1vw;
+  right: -1.3vw;
+  background: white;
+}
+
+#sec3 #right_col #KTS #cnt {
+  width: 50%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  aspect-ratio: 1;
+}
+
+#sec3 #right_col #KTS p {
+  margin-bottom: 2vw;
+  text-align: left;
+}
+
+#sec3 #right_col #KTS p sub {
+  font-size: 0.9vw;
+  font-style: italic;
+  font-weight: 500;
+  display: inline-block;
+  width: 100%;
+  text-align: right;
+}
+
+#sec3 #right_col #KTS .shape {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  gap: 0.5vw;
+}
+
+#sec3 #right_col #KTS .shape .ss {
+  width: 3vw;
+  height: 2px;
+  background: #292929;
+}
+
+#sec3 #right_col #KTS .shape #ss2 {
+  margin-right: 2vw;
+  width: 1vw;
+}
+
+#sec3 #right_col #KTS .shape #ss3 {
+  margin-right: 0.5vw;
+  width: 2.5vw;
+}
+
+#sec3 .sketchfab-embed-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background: #292929;
 }
 
 #sec4 {
